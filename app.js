@@ -59,16 +59,35 @@ searchForm.addEventListener('submit', (event) => {
           description: 'We are looking for a sales representative to join our team...',
           requirements: 'Minimum of 2 years of experience in sales...',
         },
+        {
+          title: 'Dental Specialist',
+          description: 'We are looking for a marketing specialist to join our team...',
+          requirements: 'Minimum of 3 years of experience in marketing...',
+        },
+        {
+          title: 'Graphics Designer',
+          description: 'We are looking for a sales representative to join our team...',
+          requirements: 'Minimum of 2 years of experience in sales...',
+        },
       ];
 
       jobPostings.forEach(job => {
         const jobItem = document.createElement('article');
+        jobItem.style = "width: 50%;"
         jobItem.classList.add('job-item');
         jobItem.innerHTML = `
-          <h2>${job.title}</h2>
+        <div style="margin: 15px; width: 70%; line-height: 1.5; border: 2px solid #333; padding: 20px 15px; position: relative; left: 48%; transform: translateX(-50%); :hover {color: red;}">
+        <h2>${job.title}</h2>
           <p>${job.description}</p>
-          <p><strong>Requirements:</strong> ${job.requirements}</p>
-        `;
+          <p style="margin-bottom: 5%;"><strong>Requirements:</strong> ${job.requirements}</p>
+        </div>
+        <style>
+        div:hover {
+          cursor: pointer;
+          box-shadow: 0 10px 40px 2px #33333370;
+        }
+        </style>
+          `;
         jobsList.appendChild(jobItem);
       });
 
